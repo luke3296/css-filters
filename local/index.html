@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>css-sliders</title>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='script.js'></script>
+</head>
+
+<body>
+    <h1> css-sliders </h1>
+<button onclick="readURL(this)">Submit URL </button>
+            <input id='urlBox' type="text" placeholder="Enter url and hit Submit URL">
+            <input type='file' onchange="readFile(this);" />
+            <br>
+            <button onclick="resetSliders()">Reset sliders</button>
+            <button onclick="makeBigger()">+</button>
+            <button onclick="makeSmaller()">-</button>
+
+            <div id="flex_container">
+
+            
+            <!--Form for collecting image URL -->
+            <div id="sliders" class="sliders">
+            
+            <!--Controls for CSS filters via range input-->
+           
+                    <p>
+                        <label id ="gslabel" for="gs">Grayscale 0%</label>
+                        <input id="gs" name="gs" type="range" min=0 max=100 value=0 defaultValue='0' oninput="updateFilter()">
+                    
+                    </p>
+
+                    <p>
+                        <label for="blur" id="blurlabel">Blur 0px</label>
+                        <input id="blur" name="blur" type="range" min=0 max=10 value=0 defaultValue='0' oninput="updateFilter()">
+                   </p>
+
+                    <p>
+                        <label for="br" id="brlabel">Brightness 100%</label>
+                        <input id="br" name="br" type="range" min=0 max=200 value=100 defaultValue='100' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="ct" id="ctlabel">Contrast 100%</label>
+                        <input id="ct" name="ct" type="range" min=0 max=200 value=100 defaultValue='100' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="huer" id="huerlabel">Hue Rotate 0deg</label>
+                        <input id="huer" name="huer" type="range" min=0 max=360 value=0 defaultValue='0' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="opacity" id="opacitylabel">Opacity 0%</label>
+                        <input id="opacity" name="opacity" type="range" min=0 max=100 value=100 defaultValue='100' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="invert" id="invertlabel">Invert 0%</label>
+                        <input id="invert" name="invert" type="range" min=0 max=100 value=0 defaultValue='0' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="saturate" id="saturatelabel">Saturate 0%</label>
+                        <input id="saturate" name="saturate" type="range" min=0 max=500 value=100 defaultValue='100' oninput="updateFilter()">
+                    </p>
+
+                    <p>
+                        <label for="sepia" id="sepialabel">Sepia 0%</label>
+                        <input id="sepia" name="sepia" type="range" min=0 max=100 value=0 defaultValue='0' oninput="updateFilter()"> 
+                    </p>
+
+                </div>  
+
+                <div id="img_box" class="center">
+                <img id="web_img"src="#" alt="web img"/>
+                <img id="local_img" src="#" alt="local img"/>
+
+            </div>
+            
+        </div>
+    
+
+</body>
+</html>
