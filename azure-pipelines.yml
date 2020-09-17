@@ -7,17 +7,14 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: vs2017-win2016
 
 steps:
-- script: npm install 
-- task: NodeTool@0
+- task: AzureFileCopy@2
+  displayName: 'AzureBlob File Copy'
   inputs:
-    versionSpec: '6.x'
-    checkLatest: true
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    SourcePath: $(System.DefaultWorkingDirectory)/
+    azureSubscription: PersonalAzure
+    Destination: AzureBlob
+    storage: storageacc423545
+    ContainerName: "$web"
